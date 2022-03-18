@@ -19,6 +19,7 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String name;
-    private Float price;
+    private String productId;
+    private String productName;
+    private Float productPrice;
 }
