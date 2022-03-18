@@ -39,12 +39,15 @@ public class ProductService {
         return productRepository.findAllByProductNameContainingIgnoreCase(name);
     }
 
-    // filter price higher than
-    public List<Product> findAllByProductPriceGreaterThan(Integer price){
+    // filter prices higher than
+    public List<Product> findAllByProductPriceGreaterThan(Float price){
         return productRepository.findAllByProductPriceGreaterThan(price);
     }
 
-    //
+    // filter prices below
+    public List<Product> findAllByProductPriceLessThan(Float price){
+        return productRepository.findAllByProductPriceLessThan(price);
+    }
 
     // update product
     public Product updateProduct(Product product){
