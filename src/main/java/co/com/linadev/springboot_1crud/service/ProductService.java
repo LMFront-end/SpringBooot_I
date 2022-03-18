@@ -39,6 +39,17 @@ public class ProductService {
         return productRepository.findAllByProductName(name);
     }
 
+    // update product
+    public Product updateProduct(Product product){
+        Optional<Product> productData = productRepository.findById(product.getId());
+
+        if(productData.isEmpty()){
+            throw new IllegalArgumentException("Sorry, the requested product is not in stock.");
+        }
+
+        return productRepository.save(product);
+    }
+
     // delete product by id
     public void deleteProduct(Integer id){
         productRepository.deleteById(id);
