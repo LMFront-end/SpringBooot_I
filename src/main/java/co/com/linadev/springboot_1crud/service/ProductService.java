@@ -49,6 +49,11 @@ public class ProductService {
         return productRepository.findAllByProductPriceLessThan(price);
     }
 
+    // filter prices equal to
+    public List<Product> findAllByProductPrice(Float price){
+        return productRepository.findAllByProductPrice(price);
+    }
+
     // update product
     public Product updateProduct(Product product){
         Optional<Product> productData = productRepository.findById(product.getId());
