@@ -57,5 +57,28 @@ public class ProductController {
         return productService.findAllByProductName(name);
     }
 
+    // filter prices higher than
+    // localhost:8080/api/product/priceGreaterThan/{price}
+    @GetMapping("/priceGreaterThan/{price}")
+    public List<Product> findAllByProductPriceGreaterThan(@PathVariable Float price){
+        return productService.findAllByProductPriceGreaterThan(price);
+    }
+
+    // filter prices below
+    // localhost:8080/api/product/priceLessThan/{price}
+    @GetMapping("/priceLessThan/{price}")
+    public List<Product> findAllByProductPriceLessThan(@PathVariable Float price){
+        return productService.findAllByProductPriceLessThan(price);
+    }
+
+    // filter prices equal to
+    // localhost:8080/api/product/findByPrice/{price}
+    @GetMapping("/findByPrice/{price}")
+    public List<Product> findAllByProductPrice(@PathVariable Float price){
+        return productService.findAllByProductPrice(price);
+    }
+
+    
+
 
 }
