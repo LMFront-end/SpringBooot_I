@@ -78,7 +78,19 @@ public class ProductController {
         return productService.findAllByProductPrice(price);
     }
 
-    
+    // update product
+    // localhost:8080/api/product/updateProduct
+    @PutMapping("/updateProduct")
+    public Product updateProduct(@RequestBody Product product){
+        return productService.updateProduct(product);
+    }
+
+    // delete product by id
+    // localhost:8080/api/product/deleteProduct/{id}
+    @DeleteMapping("/deleteProduct/{id}")
+    public void deleteProduct(@PathVariable Integer id){
+        productService.deleteProduct(id);
+    }
 
 
 }
